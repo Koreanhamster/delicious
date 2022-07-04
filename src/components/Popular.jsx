@@ -12,12 +12,22 @@ useEffect(()=>{
 },[])
 
   const getPopular = async()=>{
-    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=12`);
-    const data = await api.json();
-    setPopular(data.recipes);
-    console.log(data.recipes);
+    // popular가 localstorage에 저장되어있는지 확인한다.
+    const check = localStorage.getItem('popular');
+
+    if(check){
+      // 저장되어있다면, fetching할 필요 없이 배열로 반환받는다.
+      setPopular(JSON.parse(check));
+    }else{
+      // 아무것도 없다면 fetching한다.
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=12`);
+      const data = await api.json();
+
+      localStorage.setItem('popular', JSON.stringify(data.recipes))
+      setPopular(data.recipes);
+      console.log(data.recipes);
+    }
   }
-  
 
   return (
     <div>
