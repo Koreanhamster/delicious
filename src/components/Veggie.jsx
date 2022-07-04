@@ -12,14 +12,11 @@ useEffect(()=>{
 },[])
 
   const getVeggie = async()=>{
-    // popular가 localstorage에 저장되어있는지 확인한다.
     const check = localStorage.getItem('veggie');
 
     if(check){
-      // 저장되어있다면, fetching할 필요 없이 배열로 반환받는다.
       setVeggie(JSON.parse(check));
     }else{
-      // 아무것도 없다면 fetching한다.
       const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=12&tags=vegetarian`);
       const data = await api.json();
 
@@ -42,7 +39,7 @@ useEffect(()=>{
         }}>
         {veggie.map((recipe)=>{
           return (
-            <SplideSlide key={recipe .id}>
+            <SplideSlide key={recipe.id}>
               <Card>
                 <p>{recipe.title}</p>
                 <img src={recipe.image} alt={recipe.title}/>
