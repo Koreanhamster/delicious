@@ -33,19 +33,6 @@ function Cuisine() {
   )
 }
 
-// 0. 마운트 과정이 진행된다.
-// 1. state초기화와 함께 '얍'이 실행된다.
-// 2. 렌더링이 진행된다.
-// 3. useEffect가 실행된다. 
-// 4. 만들어둔 getCuisine함수를 실행한다.
-// 5. stateUpdate가 진행된다.
-// 6. 업데이트가 진행된다.
-// 7. 만들어둔 얍이 실행된다.
-// 8. 렌더링이 진행된다.
-
-
-
-
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
