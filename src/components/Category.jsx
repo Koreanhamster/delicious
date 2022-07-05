@@ -1,7 +1,7 @@
 import {FaPizzaSlice} from 'react-icons/fa'
 import {GiNoodles, GiBowlOfRice, GiBubblingBowl} from 'react-icons/gi'
 import styled from 'styled-components'
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom' 
 
 
 import React from 'react'
@@ -9,22 +9,22 @@ import React from 'react'
 function Category() {
   return (
     <List>
-      <NavLink to={'/cuisine/Italian'}>
+      <SLink to={'/cuisine/Italian'}>
         <FaPizzaSlice/>
         <h4>Italian</h4>
-      </NavLink>
-      <NavLink to={'/cuisine/Vietnamese'}>
+      </SLink>
+      <SLink to={'/cuisine/Vietnamese'}>
         <GiNoodles/>
         <h4>Vietnamese</h4>
-      </NavLink>
-      <NavLink to={'/cuisine/Thai'}>
+      </SLink>
+      <SLink to={'/cuisine/Thai'}>
         <GiBubblingBowl/>
         <h4>Thai</h4>
-      </NavLink>
-      <NavLink to={'/cuisine/Korean'}>
+      </SLink>
+      <SLink   to={'/cuisine/Korean'}>
         <GiBowlOfRice/>
         <h4>Korean</h4>
-      </NavLink>
+      </SLink>
     </List>
   )
 }
@@ -33,10 +33,36 @@ const List = styled.div`
   display: flex;
   justify-content: center;
   margin: 2rem 0rem;
+`
 
-  div{
-    margin-right: 1rem;
+const SLink = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 2rem;
+  text-decoration: none;
+  background: linear-gradient(35deg, #6a6a6a, #313131);
+  width: 6.5rem;
+  height: 6.5rem;
+  cursor: pointer;
+  transform: scale(0.8);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  h4{
+    color: white;
+    font-size: 1rem;
   }
+
+  svg{
+    color:white;
+    font-size: 2rem;
+}
+
+&.active{
+  background: linear-gradient(to right, #f27121, #e94057);
+}
 `
 
 export default Category;  
