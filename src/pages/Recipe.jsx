@@ -5,13 +5,13 @@ import {useParams} from 'react-router-dom'
 function Recipe() {
   let params = useParams();
   const [details, setDetail] = useState({});
-  const [activeTab, setActiveTab] = useState('Instructions');
-
+  const [activeTab, setActiveTab] = useState('Instructions')
 
   const fetchDetails = async()=>{
     const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
     const detailData = await data.json();
     setDetail(detailData);
+    console.log(detailData);
   } 
 
   useEffect(()=>{
@@ -26,8 +26,26 @@ function Recipe() {
         <img src={details.image} alt="" />
       </div>
       <Info>
-        <Button className={activeTab === 'Instructions' ? 'active' : ''} onClick={()=> setActiveTab('Instructions')}>Instructions</Button>
-        <Button className={activeTab === 'Ingredients' ? 'active' : ''} onClick={()=> setActiveTab('Ingredients')}>Ingredients</Button>
+        <Button className={activeTab === 'Instructions' ? 'active' : null} onClick={()=>{setActiveTab('Instructions')}}>Instructions</Button>
+        <Button className={activeTab === 'Ingredients' ? 'active' : null} onClick={()=>{setActiveTab('Ingredients')}}>Ingredients</Button>
+
+        {/* true일 때 아래값 실행해줘*/}
+        {activeTab === 'Instructions' && (
+        <div>
+          <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3>
+          <h3 dangerouslySetInnerHTML={{__html: details.instructions}}></h3>
+        </div>
+        )}
+        {/* 마찬가지 */}
+        {activeTab === "Ingredients" && (
+        <ul>
+          {details.extendedIngredients.map((ingredient)=>{
+            return(
+              <li key={ingredient.id}>{ingredient.original}</li>
+            )
+          })}
+        </ul>
+        )}
       </Info>
     </DetailWrapper>
   )
