@@ -56,6 +56,7 @@ const Card = styled.div`
   img{
     width: 100%;
     border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
 
   a{
