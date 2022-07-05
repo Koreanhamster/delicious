@@ -32,6 +32,7 @@ function Category() {
 const List = styled.div`
   display: flex;
   justify-content: center;
+  gap: 2rem;
   margin: 2rem 0rem;
 `
 
@@ -41,18 +42,17 @@ const SLink = styled(NavLink)`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-right: 2rem;
   text-decoration: none;
   background: linear-gradient(35deg, #6a6a6a, #313131);
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 6rem;
+  height: 6rem;
   cursor: pointer;
   transform: scale(0.8);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   h4{
     color: white;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   svg{

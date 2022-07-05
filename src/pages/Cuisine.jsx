@@ -8,18 +8,15 @@ import {Link, useParams} from 'react-router-dom'
 function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
   let params = useParams();
-  console.log('얍');
 
   const getCuisine = async(name)=>{
     const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=9`);
     const recipes = await data.json();
     setCuisine(recipes.results)
-    console.log(recipes.results);
   };
 
   useEffect(()=>{
     getCuisine(params.type)
-    console.log(params.type);
   },[params.type])
 
   return (
@@ -35,6 +32,19 @@ function Cuisine() {
     </Grid>
   )
 }
+
+// 0. 마운트 과정이 진행된다.
+// 1. state초기화와 함께 '얍'이 실행된다.
+// 2. 렌더링이 진행된다.
+// 3. useEffect가 실행된다. 
+// 4. 만들어둔 getCuisine함수를 실행한다.
+// 5. stateUpdate가 진행된다.
+// 6. 업데이트가 진행된다.
+// 7. 만들어둔 얍이 실행된다.
+// 8. 렌더링이 진행된다.
+
+
+
 
 const Grid = styled.div`
   display: grid;
