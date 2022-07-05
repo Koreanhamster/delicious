@@ -17,7 +17,6 @@
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "http://Koreanhamster.github.io/Jihyun-s-choice/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -43,5 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "http://Koreanhamster.github.io/Jihyun-s-choice/"
 }
