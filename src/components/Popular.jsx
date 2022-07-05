@@ -5,22 +5,18 @@ import '@splidejs/react-splide/css';
 import {Link} from 'react-router-dom'
 
 function Popular() {
-
   const [popular, setPopular] = useState([]);
 
-useEffect(()=>{
-  getPopular();
-},[])
+  useEffect(()=>{
+    getPopular();
+  },[])
 
   const getPopular = async()=>{
-    // popular가 localstorage에 저장되어있는지 확인한다.
     const check = localStorage.getItem('popular');
 
     if(check){
-      // 저장되어있다면, fetching할 필요 없이 배열로 반환받는다.
       setPopular(JSON.parse(check));
     }else{
-      // 아무것도 없다면 fetching한다.
       const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=12`);
       const data = await api.json();
 
@@ -36,8 +32,6 @@ useEffect(()=>{
         <h3>Popular Picks</h3>
         <Splide options={{
           perPage: 4,
-          // arrows: false,
-          // pagination: false,
           drag: 'free',
           gap: '5rem',
         }}>
@@ -45,7 +39,6 @@ useEffect(()=>{
           return (
             <SplideSlide key={recipe.id}>
               <Card>
-                {/* 링크 연결해서 recipe가 가진 고유의 id를 사용해 url로 이동하게 하기. 이는 :name 인자값으로 들어갈거임 */}
                 <Link to={'/recipe/' + recipe.id}>
                   <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title}/>

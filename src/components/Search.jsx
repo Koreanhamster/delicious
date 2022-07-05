@@ -10,7 +10,6 @@ function Search() {
 
   const submitHandler = (e)=>{
     e.preventDefault();
-
     navigate("/searched/" + input)
   }
 
@@ -29,7 +28,7 @@ const FormStyle = styled.form`
 
   div {
     width: 100%;
-    position: relative; //안에 아이콘 올리려고
+    position: relative; 
   }
 
   input{

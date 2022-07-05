@@ -9,7 +9,6 @@ function Searched() {
   let params = useParams();
 
   const getSearched = async(name)=>{
-    // 이번엔 쿼리로 아무 문자나 넣을 수 있게 하기
     const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=9`);
     const recipes = await data.json();
     setSearchedRecipes(recipes.results)
@@ -18,8 +17,6 @@ function Searched() {
 
   useEffect(()=>{
     getSearched(params.search);
-    // 업데이트 될 때마다 다시 fetch해주기
-    // params. 찍고 type하면 :type이 들어가고 .search하면 :search가 들어감.
     console.log(params.search);
   },[params.search])
 

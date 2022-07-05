@@ -12,7 +12,7 @@ function Recipe() {
     const detailData = await data.json();
     setDetail(detailData);
     console.log(detailData);
-  } 
+  }
 
   useEffect(()=>{
     fetchDetails();
@@ -29,14 +29,12 @@ function Recipe() {
         <Button className={activeTab === 'Instructions' ? 'active' : null} onClick={()=>{setActiveTab('Instructions')}}>Instructions</Button>
         <Button className={activeTab === 'Ingredients' ? 'active' : null} onClick={()=>{setActiveTab('Ingredients')}}>Ingredients</Button>
 
-        {/* true일 때 아래값 실행해줘*/}
         {activeTab === 'Instructions' && (
         <div>
           <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3>
           <h3 dangerouslySetInnerHTML={{__html: details.instructions}}></h3>
         </div>
         )}
-        {/* 마찬가지 */}
         {activeTab === "Ingredients" && (
         <ul>
           {details.extendedIngredients.map((ingredient)=>{

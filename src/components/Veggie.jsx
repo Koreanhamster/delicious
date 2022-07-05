@@ -33,8 +33,6 @@ useEffect(()=>{
         <h3>Vegetarian Picks</h3>
         <Splide options={{
           perPage: 3,
-          // arrows: false,
-          // pagination: false,
           drag: 'free',
           gap: '5rem',
         }}>
