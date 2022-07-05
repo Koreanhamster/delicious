@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
+import {Link} from 'react-router-dom'
 
 function Popular() {
 
@@ -44,9 +45,12 @@ useEffect(()=>{
           return (
             <SplideSlide key={recipe.id}>
               <Card>
-                <p>{recipe.title}</p>
-                <img src={recipe.image} alt={recipe.title}/>
-                <Gradient/>
+                {/* 링크 연결해서 recipe가 가진 고유의 id를 사용해 url로 이동하게 하기. 이는 :name 인자값으로 들어갈거임 */}
+                <Link to={'/recipe/' + recipe.id}>
+                  <p>{recipe.title}</p>
+                  <img src={recipe.image} alt={recipe.title}/>
+                  <Gradient/>
+                </Link>
               </Card>
             </SplideSlide>
           )
