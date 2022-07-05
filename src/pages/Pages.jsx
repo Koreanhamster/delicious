@@ -11,7 +11,6 @@ function Pages() {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/cuisine/:type' element={<Cuisine/>}></Route>
         <Route path='/searched/:search' element={<Searched/>}></Route>
-        {/* recipe추가함 */}
         <Route path='/recipe/:name' element={<Recipe/>}></Route>
       </Routes>
   )

@@ -19,6 +19,7 @@ function Searched() {
     getSearched(params.search);
     // 업데이트 될 때마다 다시 fetch해주기
     // params. 찍고 type하면 :type이 들어가고 .search하면 :search가 들어감.
+    console.log(params.search);
   },[params.search])
 
   return (
