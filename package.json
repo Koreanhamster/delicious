@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Koreanhamster.github.io/delicious/",
   "name": "delicious",
   "version": "0.1.0",
   "private": true,
@@ -42,7 +43,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://Koreanhamster.github.io/Jihyun-s-choice/",
   "devDependencies": {
     "gh-pages": "^4.0.0"
   }
