@@ -1,1 +1,1 @@
-https://koreanhamster.github.io/Jihyun-s-choice/
+https://koreanhamster.github.io/delicious/
