@@ -1,6 +1,7 @@
 Jihyun's Choice
 ===
-URL: https://koreanhamster.github.io/delicious/
+URL: https://koreanhamster.github.io/delicious/ </br>
+블로그: [삽질기록 블로그로 이동](https://jihyun-hamster.tistory.com/140)
 
 ## 프로젝트 목적과 의의
 - (본인이) 영어와 요리를 둘 다 좋아하기에, 영어사용자들에게 아시안 레시피를 소개하는 서비스 구상
@@ -37,4 +38,3 @@ URL: https://koreanhamster.github.io/delicious/
 - 검색창에 원하는 요리 검색 가능
 
 ---
-[삽질기록 블로그로 이동](https://jihyun-hamster.tistory.com/140)
