@@ -34,7 +34,7 @@ useEffect(()=>{
         <Splide options={{
           perPage: 3,
           drag: 'free',
-          gap: '5rem',
+          gap: '4rem',
         }}>
         {veggie.map((recipe)=>{
           return (
