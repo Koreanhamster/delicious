@@ -35,6 +35,7 @@ function Recipe() {
           <h3 dangerouslySetInnerHTML={{__html: details.instructions}}></h3>
         </div>
         )}
+
         {activeTab === "Ingredients" && (
         <ul>
           {details.extendedIngredients.map((ingredient)=>{
@@ -61,6 +62,12 @@ const DetailWrapper = styled.div`
 
   h2{
     margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2rem;
   }
 
   ul{
