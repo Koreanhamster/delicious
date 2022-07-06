@@ -15,21 +15,16 @@ function Search() {
 
   return (
     <FormStyle onSubmit={submitHandler}>
-      <div>
         <FaSearch></FaSearch>
         <input onChange={(e)=> setInput(e.target.value)} type='text' value={input}></input>
-      </div>
     </FormStyle>
   )
 }
 
 const FormStyle = styled.form`
-  margin: 0rem 20rem;  
-
-  div {
-    width: 100%;
-    position: relative; 
-  }
+  display: flex;
+  justify-content: center;
+  position: relative;
 
   input{
     border: none;
@@ -37,17 +32,17 @@ const FormStyle = styled.form`
     font-size: 1.5rem;
     color: #ffffff;
     padding: 0.8rem 2rem;
-    border: none;
     border-radius: 1rem;
     outline: none;
-    width: 100%;
-    margin-left: 0.5rem;
+    /* position: relative; */
+    width: 50%;
   }
 
   svg{
     position: absolute;
+    z-index: 30;
     top: 50%;
-    left: 0%;
+    left: 25%;
     transform: translate(100%, -50%);
     color: white;
   } 
